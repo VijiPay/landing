@@ -1,0 +1,152 @@
+.integrations {
+    padding: 20px;
+    background: #fff
+}
+
+.integrations .integrations__content {
+    background-color: #e0ebf4;
+    color: #000;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -ms-flex-item-align: stretch;
+    align-self: stretch;
+    border-radius: 22px;
+    padding: 64px 20px
+}
+
+.integrations__header {
+    margin: 0 0 64px;
+    padding: 0;
+    font-family: Clarkson;
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 120%;
+    text-align: center
+}
+
+.integrations__logos {
+    list-style-type: none;
+    -ms-flex-pack: center;
+    -ms-flex-align: center;
+    -ms-flex-line-pack: center;
+    align-content: center;
+    -ms-flex-item-align: stretch;
+    align-self: stretch;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap
+}
+
+.integrations__logos,
+.integrations__logos li {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    align-items: center
+}
+
+.integrations__logos li {
+    -ms-flex-pack: center;
+    -ms-flex-align: center;
+    width: 140px;
+    height: 90px;
+    border-radius: 74px;
+    margin: 12px
+}
+
+.integrations__logos li img {
+    -ms-flex-negative: 1;
+    flex-shrink: 1
+}
+
+.integrations__logos__stripe {
+    background: #635bff
+}
+
+.integrations__logos__square {
+    background: #c9e8f5
+}
+
+.integrations__logos__zapier {
+    background: #201515
+}
+
+.integrations__logos__paypal {
+    background: #ffd140
+}
+
+.integrations__logos__ga {
+    background: #fff
+}
+
+@media (max-width:743px) {
+    .integrations__logos__stripe img {
+        width: 58px;
+        height: 25px
+    }
+
+    .integrations__logos__square img {
+        width: 78px;
+        height: 20px
+    }
+
+    .integrations__logos__zapier img {
+        width: 72px;
+        height: 19px
+    }
+
+    .integrations__logos__paypal img {
+        width: 76px;
+        height: 21px
+    }
+
+    .integrations__logos__ga img {
+        width: 81px;
+        height: 28px
+    }
+}
+
+@media (min-width:384px) and (max-width:425px) {
+    .integrations__logos li:nth-child(odd) {
+        margin-left: 0
+    }
+
+    .integrations__logos li:nth-child(2n) {
+        margin-right: 0
+    }
+}
+
+@media (min-width:744px) {
+    .integrations__content {
+        max-width: 704px;
+        margin: 0 auto
+    }
+
+    .integrations__logos li {
+        width: 217px;
+        height: 140px;
+        border-radius: 100px
+    }
+}
+
+@media (min-width:1024px) {
+    .integrations__content {
+        max-width: unset
+    }
+}
+
+@media (min-width:1440px) {
+    .integrations {
+        padding: 20px 40px
+    }
+}
