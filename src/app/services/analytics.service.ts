@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 
 // biome-ignore lint/suspicious/noExplicitAny: <explanation>
-declare let gtag: any;
+ let gtag: any;
 
 @Injectable({
   providedIn: 'root'

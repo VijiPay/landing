@@ -1,0 +1,532 @@
+.frontsite-header .menu-container {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    padding: 16px 20px;
+    height: 55px;
+    background: #fff;
+    z-index: 10
+}
+
+.frontsite-header .mobile-menu-container {
+    display: block;
+    position: fixed;
+    width: 100%;
+    height: 0;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    margin: 0;
+    z-index: 10;
+    background: rgba(0, 0, 0, 0);
+    will-change: background;
+    -webkit-transition: background .3s ease-in .15s;
+    -o-transition: background .3s ease-in .15s;
+    transition: background .3s ease-in .15s
+}
+
+.frontsite-header .mobile-menu-container.enter {
+    height: 100%;
+    background: rgba(0, 0, 0, .5);
+    overflow-y: auto
+}
+
+.frontsite-header .mobile-menu-content {
+    background: #fff !important;
+    z-index: 100;
+    border-bottom-left-radius: 30px;
+    border-bottom-right-radius: 30px;
+    -webkit-transform: translateY(-1000px);
+    -ms-transform: translateY(-1000px);
+    transform: translateY(-1000px);
+    will-change: transform;
+    -webkit-transition: -webkit-transform .3s ease-in;
+    transition: -webkit-transform .3s ease-in;
+    -o-transition: transform .3s ease-in;
+    transition: transform .3s ease-in;
+    transition: transform .3s ease-in, -webkit-transform .3s ease-in
+}
+
+.frontsite-header .mobile-menu-content.enter {
+    -webkit-transform: translateY(0);
+    -ms-transform: translateY(0);
+    transform: translateY(0);
+    -webkit-transition: -webkit-transform .3s ease-out;
+    transition: -webkit-transform .3s ease-out;
+    -o-transition: transform .3s ease-out;
+    transition: transform .3s ease-out;
+    transition: transform .3s ease-out, -webkit-transform .3s ease-out
+}
+
+.frontsite-header .mobile-menu-header {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    padding: 40px 20px
+}
+
+.frontsite-header .mobile-menu-header__btn {
+    color: #2d2d2d;
+    font-family: Clarkson;
+    font-size: 14px;
+    z-index: 10
+}
+
+.frontsite-header .mobile-menu-header .back-text {
+    position: absolute;
+    left: 0;
+    margin-top: 0;
+    margin-left: 20px
+}
+
+.frontsite-header .mobile-menu-header .back-text--hidden {
+    display: none
+}
+
+.frontsite-header .mobile-menu-header .close-text {
+    position: absolute;
+    right: 0;
+    margin-top: 0;
+    margin-right: 20px
+}
+
+.frontsite-header .mobile-menu-links {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -webkit-box-pack: end;
+    -ms-flex-pack: end;
+    justify-content: flex-end;
+    -webkit-box-align: start;
+    -ms-flex-align: start;
+    align-items: flex-start;
+    padding: 0 20px 20px;
+    list-style-type: none
+}
+
+.frontsite-header .mobile-menu-links li:not(.viji-vijipay-img) {
+    margin-bottom: 8px
+}
+
+.frontsite-header .mobile-menu-links li.login {
+    margin-bottom: 24px
+}
+
+.frontsite-header .mobile-menu-links a {
+    color: #2d2d2d;
+    font-family: Clarkson;
+    font-size: 28px;
+    font-weight: 400;
+    line-height: 134.5%;
+    text-decoration: none
+}
+
+.frontsite-header .mobile-menu-links .viji-vijipay-img {
+    background: url(/img/marketing/squarespace/vijipay-bg-img.webp) #d3d3d3 50%/cover no-repeat;
+    width: 100%;
+    height: 200px;
+    border-radius: 16px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center
+}
+
+.frontsite-header .mobile-menu-links .v {
+    background: #fff;
+    color: #0e0e0e;
+    padding: 12px 24px;
+    border-radius: 12px;
+    font-family: Clarkson;
+    font-size: 14px
+}
+
+.frontsite-header .hamburger-icon {
+    display: inline-block;
+    position: absolute;
+    right: 0;
+    margin-top: 0;
+    margin-right: 20px;
+    z-index: 10
+}
+
+.frontsite-header .links {
+    display: none
+}
+
+@media (max-width:350px) {
+
+    .frontsite-header .menu-container,
+    .frontsite-header .mobile-menu-header {
+        -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+        justify-content: space-between
+    }
+
+    .frontsite-header .mobile-menu-header .close-text {
+        position: relative;
+        margin-right: 0
+    }
+}
+
+@media (min-width:744px) {
+    .frontsite-header .menu-container {
+        -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+        justify-content: space-between;
+        padding: 18px 20px 18px 40px;
+        height: 80px
+    }
+
+    .frontsite-header .links {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        align-items: center;
+        list-style-type: none
+    }
+
+    .frontsite-header .links a {
+        color: #000;
+        font-family: Clarkson;
+        font-size: 14px;
+        line-height: 134.5%;
+        text-transform: none;
+        text-decoration: none
+    }
+
+    .frontsite-header .links a:not(.v) {
+        margin-right: 40px
+    }
+
+    .frontsite-header .links a:hover {
+        opacity: .5
+    }
+
+    .frontsite-header .links .v {
+        border-radius: 12px;
+        color: #fff;
+        background-color: #283849;
+        -webkit-transition: all .15s ease-in;
+        -o-transition: all .15s ease-in;
+        transition: all .15s ease-in;
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-pack: center;
+        -ms-flex-pack: center;
+        justify-content: center;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        align-items: center;
+        margin-right: 10px;
+        padding: 12px 24px;
+        font-family: Clarkson;
+        font-size: 14px
+    }
+
+    .frontsite-header .links .v:focus {
+        background-color: #3e5772;
+        outline-color: #000;
+        outline-offset: 4px;
+        outline-width: 2px
+    }
+
+    .frontsite-header .links .v:hover {
+        background-color: #3e5772
+    }
+
+    .frontsite-header .links .v:hover {
+        opacity: 1
+    }
+
+    .frontsite-header .links .viji--light {
+        border-radius: 12px;
+        color: #283849;
+        background-color: #fff;
+        -webkit-transition: all .15s ease-in;
+        -o-transition: all .15s ease-in;
+        transition: all .15s ease-in;
+        border: 2px solid #3e5772
+    }
+
+    .frontsite-header .links .viji--light:focus {
+        background-color: #3e5772;
+        color: #fff;
+        outline-color: #000;
+        outline-offset: 4px;
+        outline-width: 2px;
+        border: none
+    }
+
+    .frontsite-header .links .viji--light:hover {
+        background-color: #3e5772;
+        color: #fff
+    }
+
+    .frontsite-header .hamburger-icon,
+    .frontsite-header .mobile-menu-container {
+        display: none
+    }
+}
+
+@media (min-width:1024px) {
+    .frontsite-header .links .v {
+        margin-right: 0
+    }
+}
+
+.navlogo {
+    width: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center
+}
+
+.navlogo--no-animation {
+    display: none
+}
+
+.navlogo__logo {
+    -webkit-transition: opacity .6s ease, -webkit-transform .6s ease;
+    transition: opacity .6s ease, -webkit-transform .6s ease;
+    -o-transition: transform .6s ease, opacity .6s ease;
+    transition: transform .6s ease, opacity .6s ease;
+    transition: transform .6s ease, opacity .6s ease, -webkit-transform .6s ease;
+    pointer-events: auto
+}
+
+.navlogo__logo.viji-vijipay-active {
+    pointer-events: none
+}
+
+.navlogo__container {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    position: absolute;
+    overflow: hidden;
+    pointer-events: none
+}
+
+.navlogo__viji.viji-vijipay-active {
+    -webkit-transform: translateY(-36px);
+    -ms-transform: translateY(-36px);
+    transform: translateY(-36px)
+}
+
+.navlogo__colon {
+    opacity: 1
+}
+
+.navlogo__colon.viji-vijipay-active {
+    opacity: 0
+}
+
+.navlogo__vijipay.viji-vijipay-active {
+    -webkit-transform: translateY(36px);
+    -ms-transform: translateY(36px);
+    transform: translateY(36px)
+}
+
+.navlogo__vvijipay {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    width: 100%;
+    -webkit-box-flex: 1;
+    -ms-flex-positive: 1;
+    flex-grow: 1;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    opacity: 0;
+    pointer-events: none;
+    -webkit-transition: opacity .6s ease;
+    -o-transition: opacity ease .6s;
+    transition: opacity .6s ease
+}
+
+.navlogo__vvijipay.viji-vijipay-active {
+    pointer-events: auto;
+    opacity: 1
+}
+
+.navlogo__vvijipay-btn {
+    border-radius: 12px;
+    color: #fff;
+    background-color: #283849;
+    -webkit-transition: all .15s ease-in;
+    -o-transition: all .15s ease-in;
+    transition: all .15s ease-in;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    padding: 12px 24px;
+    font-family: Clarkson;
+    font-size: 14px;
+    margin-right: 45px;
+    text-transform: none;
+    text-decoration: none
+}
+
+.navlogo__vvijipay-btn:focus {
+    background-color: #3e5772;
+    outline-color: #000;
+    outline-offset: 4px;
+    outline-width: 2px
+}
+
+.navlogo__vvijipay-btn:hover {
+    background-color: #3e5772
+}
+
+.navlogo__vvijipay-btn--light {
+    border-radius: 12px;
+    color: #283849;
+    background-color: #fff;
+    -webkit-transition: all .15s ease-in;
+    -o-transition: all .15s ease-in;
+    transition: all .15s ease-in;
+    border: 2px solid #3e5772
+}
+
+.navlogo__vvijipay-btn--light:focus {
+    background-color: #3e5772;
+    color: #fff;
+    outline-color: #000;
+    outline-offset: 4px;
+    outline-width: 2px;
+    border: none
+}
+
+.navlogo__vvijipay-btn--light:hover {
+    background-color: #3e5772;
+    color: #fff
+}
+
+@media (min-width:744px) {
+    .navlogo {
+        display: none
+    }
+
+    .navlogo--no-animation {
+        display: block
+    }
+}
+
+.mobile-menu-authed {
+    color: #2d2d2d;
+    font-family: Clarkson
+}
+
+.mobile-menu-authed--hidden {
+    display: none !important
+}
+
+.mobile-menu-authed li {
+    width: 100%
+}
+
+.mobile-menu-authed .mobile-auth-user-link {
+    width: 100%;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between
+}
+
+.mobile-menu-authed .mobile-auth-user-link,
+.mobile-menu-authed .mobile-auth-user-link__label {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center
+}
+
+.mobile-menu-authed .mobile-auth-user-link__name {
+    font-size: 20px
+}
+
+.mobile-menu-authed .mobile-auth-user-link:hover {
+    cursor: pointer
+}
+
+.mobile-menu-authed-secondary {
+    padding: 0 20px 20px;
+    list-style-type: none
+}
+
+.mobile-menu-authed-secondary__name {
+    font-size: 20px
+}
+
+.mobile-menu-authed-secondary__email {
+    font-size: 14px;
+    margin-top: 16px
+}
+
+.mobile-menu-authed-secondary a {
+    color: #000;
+    text-decoration: none
+}
+
+.mobile-menu-authed-secondary__option {
+    cursor: pointer
+}
+
+.mobile-menu-authed-secondary__option--cta {
+    margin-top: 40px
+}
+
+.mobile-menu-authed-secondary__option--logout {
+    margin-top: 24px;
+    margin-bottom: 20px
+}
