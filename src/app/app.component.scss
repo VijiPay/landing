@@ -96,7 +96,8 @@ select {
 [type=reset],
 [type=submit],
 button {
-    -webkit-appearance: button
+    -webkit-appearance: button;
+    appearance: button
 }
 
 [type=button]::-moz-focus-inner,
@@ -150,6 +151,7 @@ textarea {
 
 [type=search] {
     -webkit-appearance: textfield;
+    appearance: textfield;
     outline-offset: -2px
 }
 
@@ -1170,6 +1172,7 @@ button.reset-button {
     border-radius: 0;
     outline: none;
     -webkit-appearance: none;
+    appearance: none;
     -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
     -webkit-transition: .15s;
     -o-transition: .15s;
@@ -3485,4 +3488,3 @@ body:not(.pricing-page-update) table.sqsp-signup th.chart-plans ul li:first-chil
         margin-left: 0
     }
 }
-

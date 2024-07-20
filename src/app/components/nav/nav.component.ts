@@ -1,5 +1,6 @@
+import { isPlatformBrowser } from "@angular/common";
 // biome-ignore lint/style/useImportType: <explanation>
-import { AfterViewInit, Component, OnDestroy, Renderer2 } from "@angular/core";
+import { AfterViewInit, Component, Inject, OnDestroy, PLATFORM_ID, Renderer2 } from "@angular/core";
 
 @Component({
 	selector: "app-nav",
@@ -15,59 +16,51 @@ export class NavComponent implements AfterViewInit, OnDestroy {
 	private mobileMenuContent!: HTMLElement | null;
 	private bodyClickListener: (() => void) | null = null;
 
-	constructor(private renderer: Renderer2) {}
+	constructor(
+		private renderer: Renderer2,
+		// biome-ignore lint/complexity/noBannedTypes: <explanation>
+		@Inject(PLATFORM_ID) private platformId: Object) {}
 
 	ngAfterViewInit() {
-		this.hamburgerIcon = document.querySelector(".hamburger-icon");
-		this.menuContainer = document.querySelector(".menu-container");
-		this.mobileMenuContainer = document.querySelector(".mobile-menu-container");
-		this.mobileMenuContent = document.querySelector(".mobile-menu-content");
+    if (isPlatformBrowser(this.platformId)) {
+      this.hamburgerIcon = document.querySelector('.hamburger-icon');
+      this.menuContainer = document.querySelector('.menu-container');
+      this.mobileMenuContainer = document.querySelector('.mobile-menu-container');
+      this.mobileMenuContent = document.querySelector('.mobile-menu-content');
 
-		if (this.hamburgerIcon || this.mobileMenuContent) {
-			this.bodyClickListener = this.renderer.listen("document", "click", (e) =>
-				this.onBodyClick(e),
-			);
-		}
-	}
+      if (this.hamburgerIcon || this.mobileMenuContent) {
+        this.bodyClickListener = this.renderer.listen('document', 'click', (e) => this.onBodyClick(e));
+      }
+    }
+  }
 
-	ngOnDestroy() {
-		if (this.bodyClickListener) {
-			this.bodyClickListener();
-		}
-	}
+  ngOnDestroy() {
+    if (this.bodyClickListener) {
+      this.bodyClickListener();
+    }
+  }
 
-	showMobileMenu() {
-		if (
-			this.menuContainer &&
-			this.mobileMenuContainer &&
-			this.mobileMenuContent
-		) {
-			this.menuContainer.style.display = "none";
-			this.mobileMenuContainer.classList.add("enter");
-			this.mobileMenuContent.classList.add("enter");
-		}
-	}
+  showMobileMenu() {
+    if (this.menuContainer && this.mobileMenuContainer && this.mobileMenuContent) {
+      this.menuContainer.style.display = 'none';
+      this.mobileMenuContainer.classList.add('enter');
+      this.mobileMenuContent.classList.add('enter');
+    }
+  }
 
-	hideMobileMenu() {
-		if (
-			this.menuContainer &&
-			this.mobileMenuContainer &&
-			this.mobileMenuContent
-		) {
-			this.mobileMenuContainer.classList.remove("enter");
-			this.mobileMenuContent.classList.remove("enter");
-			this.menuContainer.style.display = "flex";
-		}
-	}
+  hideMobileMenu() {
+    if (this.menuContainer && this.mobileMenuContainer && this.mobileMenuContent) {
+      this.mobileMenuContainer.classList.remove('enter');
+      this.mobileMenuContent.classList.remove('enter');
+      this.menuContainer.style.display = 'flex';
+    }
+  }
 
-	private onBodyClick(event: Event) {
-		if (this.hamburgerIcon && this.mobileMenuContent) {
-			if (
-				event.target !== this.hamburgerIcon &&
-				(event.target as HTMLElement).offsetParent !== this.mobileMenuContent
-			) {
-				this.hideMobileMenu();
-			}
-		}
-	}
+  private onBodyClick(event: Event) {
+    if (this.hamburgerIcon && this.mobileMenuContent) {
+      if (event.target !== this.hamburgerIcon && (event.target as HTMLElement).offsetParent !== this.mobileMenuContent) {
+        this.hideMobileMenu();
+      }
+    }
+  }
 }
